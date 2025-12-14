@@ -1,0 +1,40 @@
+Form Pengajuan
+- Nama
+- Alamat
+- Tempat Tgl lhr
+- Pekerjaan
+- Anggunan
+- Jaminan
+- Lokasi Usaha
+- Foto Jaminan
+- Tujuan Pinjaman
+Seteleah Di setujui maka ada pilihan lanjutkan atau tidak pinjaman di menu
+hasil pengajuan
+
+Staff SAK hanya melihat jadwal survei dari Admin dan input hasil survei
+
+input Hasil survei
+- Jenis Usaha
+- Rencana Kapasitas produksi setelah pinjaman dan sebelum
+- Daerah lokasi Usaha yang di rencanakan
+- Sistem penjualan berdasar pesanan, dijual langsung, melalui pengecer
+- adakah pesaing di daerah itu
+- cara mengatasi persaingan
+- Pengalaman usaha
+- total kekayaan saat ini
+- pendapatan saat ini
+- piutang
+- tunggakan
+
+
+Analisis Kredit Menghitung dan merekap data survei dan isi perhitungan dan
+menentukan nominal
+penghitungan nominal X 0,8
+
+Admin menginput nominal pinjaman ke nasabah bisa pesan ke WA
+
+
+
+
+
+

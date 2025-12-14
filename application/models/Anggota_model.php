@@ -1,0 +1,113 @@
+<?php
+    class Anggota_model extends CI_Model{
+        public function tampil_data()
+        {
+            // memanggil usename dari database
+             return $this->db->get('anggota');
+        }
+
+        function join2table($id){
+            $this->db->select('*');
+            $this->db->from('user');
+            $this->db->join('syarat','syarat.id = user.id');
+            $this->db->where('syarat.id', $id);      
+            $query = $this->db->get();
+            return $query;
+         }
+
+    public function input_data($data)
+        {
+            // insert data ke tabel jurusan
+             $this->db->insert('anggota',$data);
+        }
+        public function edit_data($where,$table)
+            {
+        // untuk menampilkan data dari tabel text, karena datanya sudah di input sebelumnya
+            return $this->db->get_where($table,$where);
+            }
+        public function update_data($where,$data,$table)
+            {
+            $this->db->where($where);
+            $this->db->update($table,$data);
+            }
+            public function hapus_data($where,$table)
+            {
+            $this->db->where($where);
+            $this->db->delete($table);
+            }
+
+           
+        public function search($keyword){
+                $this->db->select('*');
+                $this->db->from('simpan');
+                $this->db->like('nama',$keyword);
+                $this->db->or_like('nisn',$keyword);
+                return $this->db->get()->result();
+            }
+
+            public function cari()
+            {
+                $cari = $this->input->GET('cari', TRUE);
+                $data = $this->db->query("SELECT * from simpan where nama like '%$cari%' ");
+                return $data->result();
+            }
+
+            public function show_hadir(){
+                $this->db->select('*');
+                $this->db->from('guru');
+                $this->db->where('status','Hadir');
+                return $this->db->get();
+            }
+
+            public function show_tidak_hadir(){
+                $this->db->select('*');
+                $this->db->from('guru');
+                $this->db->where('status','Tidak Hadir');
+                return $this->db->get();
+            }
+
+            public function show_tkj1(){
+                $this->db->select('*');
+                $this->db->from('guru');
+                $this->db->where('jurusan','TKJ 1');
+                return $this->db->get();
+            }
+
+            public function show_tkj2(){
+                $this->db->select('*');
+                $this->db->from('guru');
+                $this->db->where('jurusan','TKJ 2');
+                return $this->db->get();
+            }
+
+            public function show_tab1(){
+                $this->db->select('*');
+                $this->db->from('guru');
+                $this->db->where('jurusan','TAB 1');
+                return $this->db->get();
+            }
+
+            public function show_tab2(){
+                $this->db->select('*');
+                $this->db->from('guru');
+                $this->db->where('jurusan','TAB 2');
+                return $this->db->get();
+            }
+
+            public function show_tav(){
+                $this->db->select('*');
+                $this->db->from('guru');
+                $this->db->where('jurusan','TAV');
+                return $this->db->get();
+            }
+
+            public function show_titl(){
+                $this->db->select('*');
+                $this->db->from('guru');
+                $this->db->where('jurusan','TITL');
+                return $this->db->get();
+            }
+       
+
+            
+    }
